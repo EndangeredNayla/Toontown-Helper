@@ -2,8 +2,8 @@ package com.tylerroyer.ttr_helper.maps;
 
 import javax.swing.JTabbedPane;
 
-public class PunchlinePlaceMapPanel extends MapPanel {
-	public PunchlinePlaceMapPanel(JTabbedPane holder) {
+public class PajamaPlaceMapPanel extends MapPanel {
+	public PajamaPlaceMapPanel(JTabbedPane holder) {
 		super("MissingAsset", holder); // TODO
 	}
 
