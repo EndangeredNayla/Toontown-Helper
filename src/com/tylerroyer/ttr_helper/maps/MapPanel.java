@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JTabbedPane;
@@ -32,7 +33,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 		this.holder = holder;
 		initPanelLinks();
-		
+
 		addMouseListener(this);
 	}
 
@@ -59,7 +60,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		// scale and transfer offscreen to window
 		g.drawImage(offscreen, 0, 0, this);
 	}
-	
+
 	@Override
 	public void paint(Graphics arg0) {
 		Graphics2D g = (Graphics2D) arg0;
@@ -73,7 +74,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 			mouseX = MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x;
 			mouseY = MouseInfo.getPointerInfo().getLocation().y - getLocationOnScreen().y;
 		} catch (java.awt.IllegalComponentStateException e) {
-			// Ignore.  Caused by initializing panel while not selected.
+			// Ignore. Caused by initializing panel while not selected.
 		}
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {
@@ -83,16 +84,28 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 				g.drawImage(pl.getHoverImage(), mouseX, mouseY, this);
 			}
 		}
-		
-		if(isHovering)
+
+		if (isHovering)
 			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		else
 			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
+	ArrayList<MouseEvent> events = new ArrayList<>();
+
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// Do nothing.
+	public void mouseClicked(MouseEvent e) {
+		events.add(e);
+		System.out.print("{ ");
+		for (MouseEvent event : events) {
+			System.out.print(event.getX() + ", ");
+		}
+		System.out.print("}\n{ ");
+		for (MouseEvent event : events) {
+			System.out.print(event.getY() + ", ");
+		}
+
+		System.out.print("}\n\n");
 	}
 
 	@Override
@@ -107,7 +120,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		
+
 		// Test for panel links being clicked.
 		for (PanelLink pl : panelLinks) {
 			int mouseX = MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x;
