@@ -4,25 +4,16 @@ import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.IllegalComponentStateException;
-import java.awt.Image;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -58,11 +49,6 @@ public class InvasionsPanel extends JPanel {
 
 	public void doUpdate(boolean isSelected) {
 		if (isSelected) {
-			for (Component c : invasionPanelListContainer.getComponents()) {
-				if (c instanceof InvasionPanel)
-					((InvasionPanel) c).update();
-			}
-
 			// Update scroller size
 			invasionPanelListContainer.setPreferredSize(new Dimension(225,
 					invasionPanelListContainer.getComponent(invasionPanelListContainer.getComponentCount() - 1).getY()
@@ -176,28 +162,6 @@ public class InvasionsPanel extends JPanel {
 			}
 
 			add(new JLabel(new ImageIcon(panelImage)));
-		}
-
-		public void update() {
-			// Get mouse info
-			Point mLoc = MouseInfo.getPointerInfo().getLocation();
-			try {
-				mLoc = new Point(mLoc.x - this.getLocationOnScreen().x, mLoc.y - this.getLocationOnScreen().y);
-			} catch (IllegalComponentStateException e) {
-				// Do nothing. This is a result of the tab switching before the component shows
-				// up. It's okay.
-			}
-
-			// Show hover info
-			if (mLoc.x < 182 && mLoc.x > 43 && mLoc.y > 32 && mLoc.y < 151) {
-				// TODO Not double-buffering before drawing hover image
-				// It'd be nice if I could get this to work, but it doesn't seem like I can for
-				// right now. Maybe just inflate the image in another window when the icon is
-				// pressed?
-				// this.getGraphics().drawImage(invasion.getCog().getInfoImage(), mLoc.x,
-				// mLoc.y, this);
-				// this.repaint();
-			}
 		}
 
 		public Invasion getInvasion() {
