@@ -1,36 +1,33 @@
 package com.tylerroyer.ttr_helper.maps;
 
-import java.awt.Component;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.image.BufferedImage;
 
-import javax.swing.JPanel;
-
 public class PanelLink {
 	private Shape shape;
 	private BufferedImage hoverImage;
-	private Component linkedPanel;
+	private int linkedPanelIndex;
 
-	public PanelLink(Shape shape, BufferedImage hoverImage, Component linkedPanel) {
+	public PanelLink(Shape shape, BufferedImage hoverImage, int linkedPanelIndex) {
 		this.shape = shape;
 		this.hoverImage = hoverImage;
-		this.linkedPanel = linkedPanel;
+		this.linkedPanelIndex = linkedPanelIndex;
 	}
 
 	public BufferedImage getHoverImage() {
 		return hoverImage;
 	}
 
-	public Component getLinkedPanel() {
-		return linkedPanel;
+	public int getLinkedPanelIndex() {
+		return linkedPanelIndex;
 	}
 
 	public boolean contains(int x, int y) {
 		return shape.contains(x, y);
 	}
 	
-	public void draw(Graphics2D g) {
+	public void fill(Graphics2D g) {
 		g.fill(shape);
 	}
 }

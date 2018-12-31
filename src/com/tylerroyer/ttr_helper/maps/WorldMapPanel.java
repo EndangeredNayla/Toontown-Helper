@@ -20,7 +20,7 @@ public class WorldMapPanel extends MapPanel {
 			e.printStackTrace();
 		}
 		
-		PanelLink testLink = new PanelLink(new Rectangle(0, 0, 100, 100), testImage, null);
+		PanelLink testLink = new PanelLink(new Rectangle(0, 0, 100, 100), testImage, 1);
 		panelLinks = new PanelLink[] {testLink};
 	}
 }
