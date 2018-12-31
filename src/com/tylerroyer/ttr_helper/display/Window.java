@@ -53,5 +53,6 @@ public class Window extends JFrame {
 	public void update() {
 		invasionsPanel.doUpdate(tabbedPane.getSelectedComponent() == invasionsPanel);
 		cogsPanel.doUpdate(tabbedPane.getSelectedComponent() == cogsPanel);
+		mapsPanel.doUpdate(tabbedPane.getSelectedComponent() == mapsPanel);
 	}
 }
