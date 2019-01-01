@@ -37,8 +37,8 @@ public class WorldMapPanel extends MapPanel {
 				new int[] { 568, 568, 600, 600, 583, 583 },
 				new int[] { 397, 367, 367, 378, 378, 397 });
 		Shape lighthouseLaneShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 660, 629, 674, 677, 689, 682, 656, 670 },
-				new int[] { 330, 299, 299, 290, 291, 309, 313, 324 });
+				new int[] { 660, 635, 636, 641, 674, 677, 689, 682, 656, 670 },
+				new int[] { 330, 305, 301, 299, 299, 290, 290, 309, 309, 324 });
 		Shape seaweedStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 735, 711, 668, 668, 720, 753 },
 				new int[] { 433, 482, 482, 492, 492, 433 });
@@ -65,23 +65,22 @@ public class WorldMapPanel extends MapPanel {
 				new int[] { 540, 548, 515, 533, 543, 534, 571, 540 },
 				new int[] { 227, 227, 183, 183, 191, 191, 234, 234 });
 		Shape tenorTerraceShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 376, 361, 329, 296, 360, 348, 273, 333, 364, 376 },
-				new int[] { 230, 230, 257, 257, 203, 201, 266, 267, 239, 239 });
+				new int[] { 376, 361, 329, 296, 370, 320, 354, 342, 294, 348, 273, 333, 364, 376 },
+				new int[] { 230, 230, 257, 257, 194, 189, 167, 165, 196, 201, 266, 267, 239, 239 });
 		Shape polarPlaceShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 755, 777, 760, 748, 758, 750 },
 				new int[] { 172, 167, 155, 157, 163, 165 });
 		Shape sleetStreetShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 597, 555, 557, 597 },
-				new int[] { 183, 183, 191, 191 });
+				new int[] { 597, 555, 557, 597 }, new int[] { 183, 183, 191, 191 });
 		Shape walrusWayShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 682, 682, 636, 655, 668, 652, 695, 695 },
 				new int[] { 272, 266, 266, 236, 236, 257, 261, 272 });
 		Shape lullabyLaneShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 348, 294, 342, 354, 320, 370, 360 },
-				new int[] { 201, 196, 165, 167, 189, 194, 203 });
+				new int[] { 366, 381, 458, 495, 444, 436, 472, 451, 378, 356 },
+				new int[] { 160, 149, 149, 113, 113, 121, 121, 141, 141, 156 });
 		Shape pajamaPlaceShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 348, 294, 342, 354, 320, 370, 360 },
-				new int[] { 201, 196, 165, 167, 189, 194, 203 });
+				new int[] { 271, 235, 252, 224, 214, 200, 220, 276, 260, 278 },
+				new int[] { 128, 126, 109, 105, 113, 108, 93, 101, 117, 119 });
 
 		// TODO Ideally, the tab indices wouldn't be hard-coded. But for now, it should
 		// be fine unless TTR adds more streets.
@@ -101,6 +100,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(polarPlaceShape, missingAsset, 13),
 				new PanelLink(sleetStreetShape, missingAsset, 14),
 				new PanelLink(walrusWayShape, missingAsset, 15),
-				new PanelLink(lullabyLaneShape, missingAsset, 16)};
+				new PanelLink(lullabyLaneShape, missingAsset, 16),
+				new PanelLink(pajamaPlaceShape, missingAsset, 17) };
 	}
 }
