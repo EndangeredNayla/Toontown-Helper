@@ -35,11 +35,19 @@ public class WorldMapPanel extends MapPanel {
 		Shape BarnacleBoulevardShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 568, 568, 600, 600, 583, 583 },
 				new int[] { 397, 367, 367, 378, 378, 397 });
+		Shape lighthouseLaneShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 660, 629, 674, 677, 689, 682, 656, 670 },
+				new int[] { 330, 299, 299, 290, 291, 309, 313, 324 });
+		Shape seaweedStreetShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 735, 711, 668, 668, 720, 753 },
+				new int[] { 433, 482, 482, 492, 492, 433 });
 
 		panelLinks = new PanelLink[] {
 				new PanelLink(loopyLaneShape, missingAsset, 1), 
 				new PanelLink(punchlinePlaceShape, missingAsset, 2),
 				new PanelLink(sillyStreetShape, missingAsset, 3),
-				new PanelLink(BarnacleBoulevardShape, missingAsset, 4)};
+				new PanelLink(BarnacleBoulevardShape, missingAsset, 4),
+				new PanelLink(lighthouseLaneShape, missingAsset, 5),
+				new PanelLink(seaweedStreetShape, missingAsset, 6)};
 	}
 }

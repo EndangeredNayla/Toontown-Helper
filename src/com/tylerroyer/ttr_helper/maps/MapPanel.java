@@ -1,5 +1,6 @@
 package com.tylerroyer.ttr_helper.maps;
 
+import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -84,9 +85,15 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {
 				isHovering = true;
+				
 				g.setColor(new Color(.8f, .8f, 1f, 0.4f));
-				pl.fill(g, mapX, mapY);
-				g.drawImage(pl.getHoverImage(), mouseX, mouseY, this);
+				pl.fill(g);
+				g.setColor(Color.BLACK);
+				g.setStroke(new BasicStroke(3));
+				pl.draw(g);
+				
+				// TODO Move this up/over if close to the bottom/right of the window
+				g.drawImage(pl.getHoverImage(), mouseX + 15, mouseY + 15, this);
 			}
 		}
 
@@ -96,18 +103,19 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
-	ArrayList<MouseEvent> events = new ArrayList<>();
+	ArrayList<Point> events = new ArrayList<>();
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		events.add(e);
+		events.add(new Point(mouseX, mouseY));
+		
 		System.out.print("{ ");
-		for (MouseEvent event : events) {
-			System.out.print(event.getX() + ", ");
+		for (Point p : events) {
+			System.out.print(p.x + ", ");
 		}
 		System.out.print("}\n{ ");
-		for (MouseEvent event : events) {
-			System.out.print(event.getY() + ", ");
+		for (Point p : events) {
+			System.out.print(p.y + ", ");
 		}
 
 		System.out.print("}\n\n");
@@ -125,7 +133,6 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-
 		// Test for panel links being clicked.
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {

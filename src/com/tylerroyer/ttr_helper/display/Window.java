@@ -1,10 +1,5 @@
 package com.tylerroyer.ttr_helper.display;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -16,7 +11,7 @@ import com.tylerroyer.ttr_helper.globals.GlobalFonts;
 import com.tylerroyer.ttr_helper.globals.GlobalStrings;
 
 public class Window extends JFrame {
-	public static final int INITIAL_WIDTH = 950, INITIAL_HEIGHT = 720;
+	public static final int INITIAL_WIDTH = 1150, INITIAL_HEIGHT = 730;
 
 	private JTabbedPane tabbedPane;
 
