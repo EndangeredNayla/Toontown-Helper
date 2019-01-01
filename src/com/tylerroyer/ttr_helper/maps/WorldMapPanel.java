@@ -80,8 +80,8 @@ public class WorldMapPanel extends MapPanel {
 				new int[] { 366, 381, 458, 495, 444, 436, 472, 451, 378, 356 },
 				new int[] { 160, 149, 149, 113, 113, 121, 121, 141, 141, 156 });
 		Shape pajamaPlaceShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 271, 235, 252, 224, 214, 200, 220, 276, 260, 278 },
-				new int[] { 128, 126, 109, 105, 113, 108, 93, 101, 117, 119 });
+				new int[] { 271, 237, 252, 224, 214, 200, 220, 276, 261, 278 },
+				new int[] { 128, 124, 109, 105, 112, 110, 93, 101, 117, 119 });
 
 		// TODO Ideally, the tab indices wouldn't be hard-coded. But for now, it should
 		// be fine unless TTR adds more streets.
