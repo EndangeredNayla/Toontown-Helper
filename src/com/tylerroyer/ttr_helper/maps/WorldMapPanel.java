@@ -76,6 +76,12 @@ public class WorldMapPanel extends MapPanel {
 		Shape walrusWayShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 682, 682, 636, 655, 668, 652, 695, 695 },
 				new int[] { 272, 266, 266, 236, 236, 257, 261, 272 });
+		Shape lullabyLaneShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 348, 294, 342, 354, 320, 370, 360 },
+				new int[] { 201, 196, 165, 167, 189, 194, 203 });
+		Shape pajamaPlaceShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 348, 294, 342, 354, 320, 370, 360 },
+				new int[] { 201, 196, 165, 167, 189, 194, 203 });
 
 		// TODO Ideally, the tab indices wouldn't be hard-coded. But for now, it should
 		// be fine unless TTR adds more streets.
@@ -94,6 +100,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(tenorTerraceShape, missingAsset, 12),
 				new PanelLink(polarPlaceShape, missingAsset, 13),
 				new PanelLink(sleetStreetShape, missingAsset, 14),
-				new PanelLink(walrusWayShape, missingAsset, 15)};
+				new PanelLink(walrusWayShape, missingAsset, 15),
+				new PanelLink(lullabyLaneShape, missingAsset, 16)};
 	}
 }
