@@ -55,6 +55,9 @@ public class WorldMapPanel extends MapPanel {
 				new int[] { 485, 485, 512, 512, 522, 522, 493, 493 });
 		Shape mapleStreetShape2 = HelperFunctions.createPolygonFromPoints(
 				new int[] { 346, 336, 394, 394 }, new int[] { 540, 549, 541, 532 });
+		Shape oakStreetShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 234, 218, 203, 188, 221, 245 },
+				new int[] { 582, 595, 591, 596, 604, 585 });
 
 		panelLinks = new PanelLink[] { new PanelLink(loopyLaneShape, missingAsset, 1),
 				new PanelLink(punchlinePlaceShape, missingAsset, 2),
@@ -64,6 +67,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(seaweedStreetShape, missingAsset, 6),
 				new PanelLink(elmStreetShape, missingAsset, 7),
 				new PanelLink(mapleStreetShape1, missingAsset, 8),
-				new PanelLink(mapleStreetShape2, missingAsset, 8)};
+				new PanelLink(mapleStreetShape2, missingAsset, 8),
+				new PanelLink(oakStreetShape, missingAsset, 9) };
 	}
 }
