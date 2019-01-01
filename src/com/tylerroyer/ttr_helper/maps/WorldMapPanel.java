@@ -39,9 +39,12 @@ public class WorldMapPanel extends MapPanel {
 		Shape lighthouseLaneShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 660, 635, 636, 641, 674, 677, 689, 682, 656, 670 },
 				new int[] { 330, 305, 301, 299, 299, 290, 290, 309, 309, 324 });
-		Shape seaweedStreetShape = HelperFunctions.createPolygonFromPoints(
-				new int[] { 735, 711, 668, 668, 720, 753 },
-				new int[] { 433, 482, 482, 492, 492, 433 });
+		// I'm splitting Seaweed Street into two sections because it lies behind the
+		// Bossbot HQ.
+		Shape seaweedStreetShape1 = HelperFunctions.createPolygonFromPoints(
+				new int[] { 735, 722, 728, 753 }, new int[] { 433, 459, 473, 433 });
+		Shape seaweedStreetShape2 = HelperFunctions.createPolygonFromPoints(
+				new int[] { 706, 668, 668, 704 }, new int[] { 481, 482, 492, 490 });
 		Shape elmStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 148, 116, 189, 193, 140, 164 },
 				new int[] { 479, 509, 520, 511, 503, 480 });
@@ -87,9 +90,11 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(sillyStreetShape, missingAsset, 3),
 				new PanelLink(BarnacleBoulevardShape, missingAsset, 4),
 				new PanelLink(lighthouseLaneShape, missingAsset, 5),
-				new PanelLink(seaweedStreetShape, missingAsset, 6),
+				new PanelLink(
+						new Shape[] { seaweedStreetShape1, seaweedStreetShape2 }, missingAsset, 6),
 				new PanelLink(elmStreetShape, missingAsset, 7),
-				new PanelLink(new Shape[] {mapleStreetShape1, mapleStreetShape2}, missingAsset, 8),
+				new PanelLink(new Shape[] { mapleStreetShape1, mapleStreetShape2 }, missingAsset,
+						8),
 				new PanelLink(oakStreetShape, missingAsset, 9),
 				new PanelLink(altoAvenueShape, missingAsset, 10),
 				new PanelLink(baritoneBoulevardShape, missingAsset, 11),
