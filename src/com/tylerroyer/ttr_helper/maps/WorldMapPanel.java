@@ -61,6 +61,9 @@ public class WorldMapPanel extends MapPanel {
 		Shape altoAvenueShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 482, 511, 494, 504, 532, 482 },
 				new int[] { 295, 295, 273, 272, 307, 307 });
+		Shape baritoneBoulevardShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 540, 548, 515, 533, 543, 534, 571, 540 },
+				new int[] { 227, 227, 183, 183, 191, 191, 234, 234 });
 
 		// TODO Ideally, the tab indices wouldn't be hard-coded. But for now, it should
 		// be fine unless TTR adds more streets.
@@ -74,6 +77,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(mapleStreetShape1, missingAsset, 8),
 				new PanelLink(mapleStreetShape2, missingAsset, 8),
 				new PanelLink(oakStreetShape, missingAsset, 9),
-				new PanelLink(altoAvenueShape, missingAsset, 10) };
+				new PanelLink(altoAvenueShape, missingAsset, 10),
+				new PanelLink(baritoneBoulevardShape, missingAsset, 11)};
 	}
 }
