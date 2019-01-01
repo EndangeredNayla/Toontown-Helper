@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class LighthouseLaneMapPanel  extends MapPanel {
 	public LighthouseLaneMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Lighthouse Lane", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

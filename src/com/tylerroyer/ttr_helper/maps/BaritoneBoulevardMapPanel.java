@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class BaritoneBoulevardMapPanel  extends MapPanel {
 	public BaritoneBoulevardMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Baritone Boulevard", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

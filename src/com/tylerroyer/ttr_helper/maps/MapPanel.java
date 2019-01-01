@@ -30,8 +30,12 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 	protected MapPanel(String mapName, JTabbedPane holder) {
 		try {
 			map = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/" + mapName + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			try {
+				map = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 
 		this.holder = holder;
