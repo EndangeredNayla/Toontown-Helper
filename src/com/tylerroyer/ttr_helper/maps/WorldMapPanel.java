@@ -67,6 +67,9 @@ public class WorldMapPanel extends MapPanel {
 		Shape tenorTerraceShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 376, 361, 329, 296, 360, 348, 273, 333, 364, 376 },
 				new int[] { 230, 230, 257, 257, 203, 201, 266, 267, 239, 239 });
+		Shape polarPlaceShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 755, 777, 760, 748, 758, 750 },
+				new int[] { 172, 167, 155, 157, 163, 165 });
 		Shape walrusWayShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 682, 682, 636, 655, 668, 652, 695, 695 },
 				new int[] { 272, 266, 266, 236, 236, 257, 261, 272 });
@@ -86,6 +89,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(altoAvenueShape, missingAsset, 10),
 				new PanelLink(baritoneBoulevardShape, missingAsset, 11),
 				new PanelLink(tenorTerraceShape, missingAsset, 12),
+				new PanelLink(polarPlaceShape, missingAsset, 13),
 				new PanelLink(walrusWayShape, missingAsset, 15)};
 	}
 }
