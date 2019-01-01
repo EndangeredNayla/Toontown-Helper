@@ -52,8 +52,8 @@ public class WorldMapPanel extends MapPanel {
 		// To account for this, I'm splitting it into two parts so there's not a link
 		// going through Chip and Dale's area.
 		Shape mapleStreetShape1 = HelperFunctions.createPolygonFromPoints(
-				new int[] { 642, 612, 648, 630, 630, 680, 636, 650 },
-				new int[] { 485, 485, 512, 512, 522, 522, 493, 493 });
+				new int[] { 642, 626, 623, 648, 630, 630, 665, 667, 636, 650 },
+				new int[] { 485, 486, 493, 512, 512, 522, 522, 510, 493, 493 });
 		Shape mapleStreetShape2 = HelperFunctions.createPolygonFromPoints(
 				new int[] { 346, 338, 397, 397 }, new int[] { 543, 555, 546, 534 });
 		Shape oakStreetShape = HelperFunctions.createPolygonFromPoints(
