@@ -29,10 +29,12 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	protected MapPanel(String mapName, JTabbedPane holder) {
 		try {
-			map = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/" + mapName + ".png"));
+			map = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/" + mapName + ".png"));
 		} catch (Exception e) {
 			try {
-				map = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+				map = ImageIO.read(this.getClass()
+						.getResourceAsStream("/resources/graphical/MissingAsset.png"));
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -90,17 +92,21 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {
 				isHovering = true;
-				
+
 				// Draw link
 				g.setColor(new Color(.8f, .8f, 1f, 0.4f));
 				pl.fill(g);
 				g.setColor(Color.BLACK);
 				g.setStroke(new BasicStroke(3));
 				pl.draw(g);
-				
+
 				// TODO Move this up/over if close to the bottom/right of the window
 				// Draw hover image
-				g.drawImage(pl.getHoverImage(), mouseX + 15, mouseY + 15, this);
+				int imageWidth = pl.getHoverImage().getWidth();
+				int imageHeight = pl.getHoverImage().getHeight();
+				int offsetX = mouseX + imageWidth > map.getWidth() ? -imageWidth - 15 : +15;
+				int offsetY = mouseY + imageHeight > map.getHeight() ? -imageHeight - 15 : +15;
+				g.drawImage(pl.getHoverImage(), mouseX + offsetX, mouseY + offsetY, this);
 			}
 		}
 
@@ -117,7 +123,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		// Mouse click sysout format for easily creating panel links
 		events.add(new Point(mouseX, mouseY));
-		
+
 		System.out.print("{ ");
 		for (Point p : events) {
 			System.out.print(p.x + ", ");

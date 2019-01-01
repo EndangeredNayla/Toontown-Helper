@@ -16,10 +16,52 @@ public class WorldMapPanel extends MapPanel {
 	}
 
 	protected void initPanelLinks() {
-		BufferedImage missingAsset = null;
+		BufferedImage missingAsset = null, altoAvenueHoverImage = null,
+				baritoneBoulevardHoverImage = null, barnacleBoulevardHoverImage = null,
+				elmStreetHoverImage = null, lighthouseLaneHoverImage = null,
+				loopyLaneHoverImage = null, lullabyLaneHoverImage = null,
+				mapleStreetHoverImage = null, oakStreetHoverImage = null,
+				pajamaPlaceHoverImage = null, polarPlaceHoverImage = null,
+				punchlinePlaceHoverImage = null, seaweedStreetHoverImage = null,
+				sillyStreetHoverImage = null, sleetStreetHoverImage = null,
+				tenorTerraceHoverImage = null, walrusWayHoverImage = null;
 		try {
 			missingAsset = ImageIO.read(
 					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			altoAvenueHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Alto Avenue.jpg"));
+			baritoneBoulevardHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Baritone Boulevard.jpg"));
+			barnacleBoulevardHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Barnacle Boulevard.jpg"));
+			elmStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.jpg"));
+			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Lighthouse Lane.jpg"));
+			loopyLaneHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Loopy Lane.jpg"));
+			lullabyLaneHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Lullaby Lane.jpg"));
+			mapleStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Maple Street.jpg"));
+			oakStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Oak Street.jpg"));
+			pajamaPlaceHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Pajama Place.jpg"));
+			polarPlaceHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Polar Place.jpg"));
+			punchlinePlaceHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Punchline Place.jpg"));
+			seaweedStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Seaweed Street.jpg"));
+			sillyStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Silly Street.jpg"));
+			sleetStreetHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Sleet Street.jpg"));
+			tenorTerraceHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Tenor Terrace.jpg"));
+			walrusWayHoverImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Hover Image - Walrus Way.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -33,7 +75,7 @@ public class WorldMapPanel extends MapPanel {
 		Shape sillyStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 302, 245, 266, 210, 172, 203, 182, 162, 176, 148, 202, 299, 272, 294 },
 				new int[] { 442, 438, 422, 418, 450, 449, 468, 468, 456, 455, 409, 411, 430, 431 });
-		Shape BarnacleBoulevardShape = HelperFunctions.createPolygonFromPoints(
+		Shape barnacleBoulevardShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 568, 568, 600, 600, 583, 583 },
 				new int[] { 397, 367, 367, 378, 378, 397 });
 		Shape lighthouseLaneShape = HelperFunctions.createPolygonFromPoints(
@@ -85,24 +127,24 @@ public class WorldMapPanel extends MapPanel {
 
 		// TODO Ideally, the tab indices wouldn't be hard-coded. But for now, it should
 		// be fine unless TTR adds more streets.
-		panelLinks = new PanelLink[] { new PanelLink(loopyLaneShape, missingAsset, 1),
-				new PanelLink(punchlinePlaceShape, missingAsset, 2),
-				new PanelLink(sillyStreetShape, missingAsset, 3),
-				new PanelLink(BarnacleBoulevardShape, missingAsset, 4),
-				new PanelLink(lighthouseLaneShape, missingAsset, 5),
+		panelLinks = new PanelLink[] { new PanelLink(loopyLaneShape, loopyLaneHoverImage, 1),
+				new PanelLink(punchlinePlaceShape, punchlinePlaceHoverImage, 2),
+				new PanelLink(sillyStreetShape, sillyStreetHoverImage, 3),
+				new PanelLink(barnacleBoulevardShape, barnacleBoulevardHoverImage, 4),
+				new PanelLink(lighthouseLaneShape, lighthouseLaneHoverImage, 5),
 				new PanelLink(
-						new Shape[] { seaweedStreetShape1, seaweedStreetShape2 }, missingAsset, 6),
-				new PanelLink(elmStreetShape, missingAsset, 7),
-				new PanelLink(new Shape[] { mapleStreetShape1, mapleStreetShape2 }, missingAsset,
+						new Shape[] { seaweedStreetShape1, seaweedStreetShape2 }, seaweedStreetHoverImage, 6),
+				new PanelLink(elmStreetShape, elmStreetHoverImage, 7),
+				new PanelLink(new Shape[] { mapleStreetShape1, mapleStreetShape2 }, mapleStreetHoverImage,
 						8),
-				new PanelLink(oakStreetShape, missingAsset, 9),
-				new PanelLink(altoAvenueShape, missingAsset, 10),
-				new PanelLink(baritoneBoulevardShape, missingAsset, 11),
-				new PanelLink(tenorTerraceShape, missingAsset, 12),
-				new PanelLink(polarPlaceShape, missingAsset, 13),
-				new PanelLink(sleetStreetShape, missingAsset, 14),
-				new PanelLink(walrusWayShape, missingAsset, 15),
-				new PanelLink(lullabyLaneShape, missingAsset, 16),
-				new PanelLink(pajamaPlaceShape, missingAsset, 17) };
+				new PanelLink(oakStreetShape, oakStreetHoverImage, 9),
+				new PanelLink(altoAvenueShape, altoAvenueHoverImage, 10),
+				new PanelLink(baritoneBoulevardShape, baritoneBoulevardHoverImage, 11),
+				new PanelLink(tenorTerraceShape, tenorTerraceHoverImage, 12),
+				new PanelLink(polarPlaceShape, polarPlaceHoverImage, 13),
+				new PanelLink(sleetStreetShape, sleetStreetHoverImage, 14),
+				new PanelLink(walrusWayShape, walrusWayHoverImage, 15),
+				new PanelLink(lullabyLaneShape, lullabyLaneHoverImage, 16),
+				new PanelLink(pajamaPlaceShape, pajamaPlaceHoverImage, 17) };
 	}
 }
