@@ -71,6 +71,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		int mapX, mapY;
 		mapX = getSize().width / 2 - map.getWidth() / 2;
 		mapY = getSize().height / 2 - map.getHeight() / 2;
+		// Translate graphics to map origin for simplified drawing.
 		g.translate(mapX, mapY);
 		g.drawImage(map, 0, 0, this);
 
@@ -86,6 +87,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 			if (pl.contains(mouseX, mouseY)) {
 				isHovering = true;
 				
+				// Draw link
 				g.setColor(new Color(.8f, .8f, 1f, 0.4f));
 				pl.fill(g);
 				g.setColor(Color.BLACK);
@@ -93,10 +95,12 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 				pl.draw(g);
 				
 				// TODO Move this up/over if close to the bottom/right of the window
+				// Draw hover image
 				g.drawImage(pl.getHoverImage(), mouseX + 15, mouseY + 15, this);
 			}
 		}
 
+		// Set cursor appropriately
 		if (isHovering)
 			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		else
@@ -107,6 +111,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		// Mouse click sysout format for easily creating panel links
 		events.add(new Point(mouseX, mouseY));
 		
 		System.out.print("{ ");

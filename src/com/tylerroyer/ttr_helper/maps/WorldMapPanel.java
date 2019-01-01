@@ -41,6 +41,9 @@ public class WorldMapPanel extends MapPanel {
 		Shape seaweedStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 735, 711, 668, 668, 720, 753 },
 				new int[] { 433, 482, 482, 492, 492, 433 });
+		Shape elmStreetShape = HelperFunctions.createPolygonFromPoints(
+				new int[] { 148, 116, 189, 193, 140, 164 },
+				new int[] { 479, 509, 520, 511, 503, 480 });
 
 		panelLinks = new PanelLink[] {
 				new PanelLink(loopyLaneShape, missingAsset, 1), 
@@ -48,6 +51,7 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(sillyStreetShape, missingAsset, 3),
 				new PanelLink(BarnacleBoulevardShape, missingAsset, 4),
 				new PanelLink(lighthouseLaneShape, missingAsset, 5),
-				new PanelLink(seaweedStreetShape, missingAsset, 6)};
+				new PanelLink(seaweedStreetShape, missingAsset, 6),
+				new PanelLink(elmStreetShape, missingAsset, 7)};
 	}
 }
