@@ -18,7 +18,8 @@ public class WorldMapPanel extends MapPanel {
 	protected void initPanelLinks() {
 		BufferedImage missingAsset = null;
 		try {
-			missingAsset = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			missingAsset = ImageIO.read(
+					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -44,14 +45,25 @@ public class WorldMapPanel extends MapPanel {
 		Shape elmStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 148, 116, 189, 193, 140, 164 },
 				new int[] { 479, 509, 520, 511, 503, 480 });
+		// Maple st is weird in that it seems to go right through Chip and Dale's area.
+		// To account for this, I'm splitting it into two parts so there's not a link
+		// going through Chip and Dale's area.
+		// TODO Somehow I'd like both to light up whenever one of them is being hovered
+		// over.
+		Shape mapleStreetShape1 = HelperFunctions.createPolygonFromPoints(
+				new int[] { 642, 612, 648, 630, 630, 680, 636, 650 },
+				new int[] { 485, 485, 512, 512, 522, 522, 493, 493 });
+		Shape mapleStreetShape2 = HelperFunctions.createPolygonFromPoints(
+				new int[] { 346, 336, 394, 394 }, new int[] { 540, 549, 541, 532 });
 
-		panelLinks = new PanelLink[] {
-				new PanelLink(loopyLaneShape, missingAsset, 1), 
+		panelLinks = new PanelLink[] { new PanelLink(loopyLaneShape, missingAsset, 1),
 				new PanelLink(punchlinePlaceShape, missingAsset, 2),
 				new PanelLink(sillyStreetShape, missingAsset, 3),
 				new PanelLink(BarnacleBoulevardShape, missingAsset, 4),
 				new PanelLink(lighthouseLaneShape, missingAsset, 5),
 				new PanelLink(seaweedStreetShape, missingAsset, 6),
-				new PanelLink(elmStreetShape, missingAsset, 7)};
+				new PanelLink(elmStreetShape, missingAsset, 7),
+				new PanelLink(mapleStreetShape1, missingAsset, 8),
+				new PanelLink(mapleStreetShape2, missingAsset, 8)};
 	}
 }
