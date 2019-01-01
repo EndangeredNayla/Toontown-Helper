@@ -15,23 +15,23 @@ public class Window extends JFrame {
 
 	private JTabbedPane tabbedPane;
 
-	private InvasionsPanel invasionsPanel;
-	private CogsPanel cogsPanel;
 	private MapsPanel mapsPanel;
+	private CogsPanel cogsPanel;
+	private InvasionsPanel invasionsPanel;
 
 	public Window() {
 		this.setTitle(GlobalStrings.ProgramName + " " + GlobalStrings.ProgramVersion);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		invasionsPanel = new InvasionsPanel();
-		cogsPanel = new CogsPanel();
 		mapsPanel = new MapsPanel();
+		cogsPanel = new CogsPanel();
+		invasionsPanel = new InvasionsPanel();
 
 		tabbedPane = new JTabbedPane();
 		tabbedPane.setFont(GlobalFonts.mickeyFont.deriveFont(18f));
-		tabbedPane.addTab("Invasions", invasionsPanel);
-		tabbedPane.addTab("Cogs", cogsPanel);
 		tabbedPane.addTab("Maps", mapsPanel);
+		tabbedPane.addTab("Cogs", cogsPanel);
+		tabbedPane.addTab("Invasions", invasionsPanel);
 		this.add(tabbedPane);
 
 		this.setSize(INITIAL_WIDTH, INITIAL_HEIGHT);
