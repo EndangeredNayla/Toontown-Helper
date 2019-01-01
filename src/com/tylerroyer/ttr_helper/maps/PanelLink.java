@@ -27,7 +27,7 @@ public class PanelLink {
 		return shape.contains(x, y);
 	}
 	
-	public void fill(Graphics2D g) {
+	public void fill(Graphics2D g, int offsetX, int offsetY) {
 		g.fill(shape);
 	}
 }

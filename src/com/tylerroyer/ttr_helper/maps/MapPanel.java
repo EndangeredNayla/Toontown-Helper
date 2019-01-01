@@ -8,6 +8,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.MouseInfo;
+import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
@@ -17,12 +18,13 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JTabbedPane;
 
-import com.tylerroyer.ttr_helper.globals.GlobalHandles;
-
 public abstract class MapPanel extends Canvas implements MouseListener {
 	private BufferedImage map;
 	protected PanelLink[] panelLinks;
 	protected JTabbedPane holder;
+
+	int mouseX = 0;
+	int mouseY = 0;
 
 	protected MapPanel(String mapName, JTabbedPane holder) {
 		try {
@@ -65,22 +67,25 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 	public void paint(Graphics arg0) {
 		Graphics2D g = (Graphics2D) arg0;
 
+		int mapX, mapY;
+		mapX = getSize().width / 2 - map.getWidth() / 2;
+		mapY = getSize().height / 2 - map.getHeight() / 2;
+		g.translate(mapX, mapY);
 		g.drawImage(map, 0, 0, this);
 
 		boolean isHovering = false;
-		int mouseX = 0;
-		int mouseY = 0;
 		try {
-			mouseX = MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x;
-			mouseY = MouseInfo.getPointerInfo().getLocation().y - getLocationOnScreen().y;
+			// Locations relative to the map
+			mouseX = MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x - mapX;
+			mouseY = MouseInfo.getPointerInfo().getLocation().y - getLocationOnScreen().y - mapY;
 		} catch (java.awt.IllegalComponentStateException e) {
 			// Ignore. Caused by initializing panel while not selected.
 		}
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {
 				isHovering = true;
-				g.setColor(new Color(0f, 0f, 0.9f, 0.15f));
-				pl.fill(g);
+				g.setColor(new Color(.8f, .8f, 1f, 0.4f));
+				pl.fill(g, mapX, mapY);
 				g.drawImage(pl.getHoverImage(), mouseX, mouseY, this);
 			}
 		}
@@ -123,8 +128,6 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 		// Test for panel links being clicked.
 		for (PanelLink pl : panelLinks) {
-			int mouseX = MouseInfo.getPointerInfo().getLocation().x - getLocationOnScreen().x;
-			int mouseY = MouseInfo.getPointerInfo().getLocation().y - getLocationOnScreen().y;
 			if (pl.contains(mouseX, mouseY)) {
 				holder.setSelectedIndex(pl.getLinkedPanelIndex());
 				return;
