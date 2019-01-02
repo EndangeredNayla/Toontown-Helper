@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class PunchlinePlaceMapPanel extends MapPanel {
 	public PunchlinePlaceMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Punchline Place", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

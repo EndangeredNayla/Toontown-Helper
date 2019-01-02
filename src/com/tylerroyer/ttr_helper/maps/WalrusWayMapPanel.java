@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class WalrusWayMapPanel extends MapPanel {
 	public WalrusWayMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Walrus Way", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

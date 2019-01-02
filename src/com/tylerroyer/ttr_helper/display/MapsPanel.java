@@ -31,6 +31,7 @@ public class MapsPanel extends JTabbedPane {
 	private Map<String, MapPanel> mapPanels = new LinkedHashMap<>();
 
 	public MapsPanel() {
+		// Put all maps into hash map
 		mapPanels.put("World Map", new WorldMapPanel(this));
 		mapPanels.put("LoopyLane", new LoopyLaneMapPanel(this));
 		mapPanels.put("Punchline Place", new PunchlinePlaceMapPanel(this));
@@ -50,8 +51,11 @@ public class MapsPanel extends JTabbedPane {
 		mapPanels.put("Lullaby Lane", new LullabyLaneMapPanel(this));
 		mapPanels.put("Pajama Place", new PajamaPlaceMapPanel(this));
 
+		// Pane properties
 		this.setTabPlacement(JTabbedPane.LEFT);
 		this.setFont(GlobalFonts.mickeyFont.deriveFont(18f));
+		
+		// Add tabs to pane
 		for(Entry<String, MapPanel> entry : mapPanels.entrySet()) {
 			this.addTab(entry.getKey(), entry.getValue());
 		}
@@ -59,6 +63,7 @@ public class MapsPanel extends JTabbedPane {
 
 	public void doUpdate(boolean isSelected) {
 		if (isSelected) {
+			// Repaint all maps
 			for(MapPanel panel : mapPanels.values()) {
 				panel.repaint();
 			}

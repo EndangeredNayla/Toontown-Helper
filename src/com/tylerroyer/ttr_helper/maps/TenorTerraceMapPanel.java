@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class TenorTerraceMapPanel extends MapPanel {
 	public TenorTerraceMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Tenor Terrace", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

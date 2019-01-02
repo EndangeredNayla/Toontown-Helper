@@ -5,12 +5,18 @@ import java.awt.Shape;
 import java.awt.image.BufferedImage;
 
 public class PanelLink {
-	private Shape shape;
+	private Shape[] shapes;
 	private BufferedImage hoverImage;
 	private int linkedPanelIndex;
 
 	public PanelLink(Shape shape, BufferedImage hoverImage, int linkedPanelIndex) {
-		this.shape = shape;
+		this.shapes = new Shape[] { shape };
+		this.hoverImage = hoverImage;
+		this.linkedPanelIndex = linkedPanelIndex;
+	}
+
+	public PanelLink(Shape[] shapes, BufferedImage hoverImage, int linkedPanelIndex) {
+		this.shapes = shapes;
 		this.hoverImage = hoverImage;
 		this.linkedPanelIndex = linkedPanelIndex;
 	}
@@ -24,10 +30,20 @@ public class PanelLink {
 	}
 
 	public boolean contains(int x, int y) {
-		return shape.contains(x, y);
+		for (Shape shape : shapes)
+			if (shape.contains(x, y))
+				return true;
+		
+		return false;
 	}
-	
-	public void fill(Graphics2D g, int offsetX, int offsetY) {
-		g.fill(shape);
+
+	public void fill(Graphics2D g) {
+		for (Shape shape : shapes)
+			g.fill(shape);
+	}
+
+	public void draw(Graphics2D g) {
+		for (Shape shape : shapes)
+			g.draw(shape);
 	}
 }

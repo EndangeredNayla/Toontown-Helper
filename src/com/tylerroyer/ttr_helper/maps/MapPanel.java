@@ -1,5 +1,6 @@
 package com.tylerroyer.ttr_helper.maps;
 
+import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -28,9 +29,15 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	protected MapPanel(String mapName, JTabbedPane holder) {
 		try {
-			map = ImageIO.read(this.getClass().getResourceAsStream("/resources/graphical/" + mapName + ".png"));
-		} catch (IOException e) {
-			e.printStackTrace();
+			map = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/" + mapName + ".png"));
+		} catch (Exception e) {
+			try {
+				map = ImageIO.read(this.getClass()
+						.getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 
 		this.holder = holder;
@@ -70,6 +77,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		int mapX, mapY;
 		mapX = getSize().width / 2 - map.getWidth() / 2;
 		mapY = getSize().height / 2 - map.getHeight() / 2;
+		// Translate graphics to map origin for simplified drawing.
 		g.translate(mapX, mapY);
 		g.drawImage(map, 0, 0, this);
 
@@ -84,30 +92,45 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {
 				isHovering = true;
+
+				// Draw link
 				g.setColor(new Color(.8f, .8f, 1f, 0.4f));
-				pl.fill(g, mapX, mapY);
-				g.drawImage(pl.getHoverImage(), mouseX, mouseY, this);
+				pl.fill(g);
+				g.setColor(Color.BLACK);
+				g.setStroke(new BasicStroke(3));
+				pl.draw(g);
+
+				// TODO Move this up/over if close to the bottom/right of the window
+				// Draw hover image
+				int imageWidth = pl.getHoverImage().getWidth();
+				int imageHeight = pl.getHoverImage().getHeight();
+				int offsetX = mouseX + imageWidth > map.getWidth() ? -imageWidth - 15 : +15;
+				int offsetY = mouseY + imageHeight > map.getHeight() ? -imageHeight - 15 : +15;
+				g.drawImage(pl.getHoverImage(), mouseX + offsetX, mouseY + offsetY, this);
 			}
 		}
 
+		// Set cursor appropriately
 		if (isHovering)
 			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		else
 			setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
-	ArrayList<MouseEvent> events = new ArrayList<>();
+	ArrayList<Point> events = new ArrayList<>();
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		events.add(e);
+		// Mouse click sysout format for easily creating panel links
+		events.add(new Point(mouseX, mouseY));
+
 		System.out.print("{ ");
-		for (MouseEvent event : events) {
-			System.out.print(event.getX() + ", ");
+		for (Point p : events) {
+			System.out.print(p.x + ", ");
 		}
 		System.out.print("}\n{ ");
-		for (MouseEvent event : events) {
-			System.out.print(event.getY() + ", ");
+		for (Point p : events) {
+			System.out.print(p.y + ", ");
 		}
 
 		System.out.print("}\n\n");
@@ -125,7 +148,6 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-
 		// Test for panel links being clicked.
 		for (PanelLink pl : panelLinks) {
 			if (pl.contains(mouseX, mouseY)) {

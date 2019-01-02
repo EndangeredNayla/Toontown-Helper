@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class LoopyLaneMapPanel extends MapPanel {
 	public LoopyLaneMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Loopy Lane", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

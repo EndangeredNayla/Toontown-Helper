@@ -1,10 +1,5 @@
 package com.tylerroyer.ttr_helper.display;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -16,27 +11,27 @@ import com.tylerroyer.ttr_helper.globals.GlobalFonts;
 import com.tylerroyer.ttr_helper.globals.GlobalStrings;
 
 public class Window extends JFrame {
-	public static final int INITIAL_WIDTH = 950, INITIAL_HEIGHT = 720;
+	public static final int INITIAL_WIDTH = 1150, INITIAL_HEIGHT = 730;
 
 	private JTabbedPane tabbedPane;
 
-	private InvasionsPanel invasionsPanel;
-	private CogsPanel cogsPanel;
 	private MapsPanel mapsPanel;
+	private CogsPanel cogsPanel;
+	private InvasionsPanel invasionsPanel;
 
 	public Window() {
 		this.setTitle(GlobalStrings.ProgramName + " " + GlobalStrings.ProgramVersion);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		invasionsPanel = new InvasionsPanel();
-		cogsPanel = new CogsPanel();
 		mapsPanel = new MapsPanel();
+		cogsPanel = new CogsPanel();
+		invasionsPanel = new InvasionsPanel();
 
 		tabbedPane = new JTabbedPane();
 		tabbedPane.setFont(GlobalFonts.mickeyFont.deriveFont(18f));
-		tabbedPane.addTab("Invasions", invasionsPanel);
-		tabbedPane.addTab("Cogs", cogsPanel);
 		tabbedPane.addTab("Maps", mapsPanel);
+		tabbedPane.addTab("Cogs", cogsPanel);
+		tabbedPane.addTab("Invasions", invasionsPanel);
 		this.add(tabbedPane);
 
 		this.setSize(INITIAL_WIDTH, INITIAL_HEIGHT);

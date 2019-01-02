@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class PolarPlaceMapPanel extends MapPanel {
 	public PolarPlaceMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Polar Place", holder); // TODO
 	}
 
 	protected void initPanelLinks() {

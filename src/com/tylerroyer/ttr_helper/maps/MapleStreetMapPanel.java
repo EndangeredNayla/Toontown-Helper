@@ -4,7 +4,7 @@ import javax.swing.JTabbedPane;
 
 public class MapleStreetMapPanel extends MapPanel {
 	public MapleStreetMapPanel(JTabbedPane holder) {
-		super("MissingAsset", holder); // TODO
+		super("Street Map - Maple Street", holder); // TODO
 	}
 
 	protected void initPanelLinks() {
