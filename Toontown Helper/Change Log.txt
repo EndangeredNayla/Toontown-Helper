@@ -4,3 +4,4 @@
 0.2.0 - Added a "Cogs" tab which shows all of the cogs in the game and their info.
 0.2.1 - Network-related stability enhancements.
 0.2.2 - Added sorting options to the "Cogs" tab.
+0.3.0 - Added "Maps" tab with maps of each street as well as the world map.
