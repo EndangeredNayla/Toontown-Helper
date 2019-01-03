@@ -39,7 +39,7 @@ public class WorldMapPanel extends MapPanel {
 			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Lighthouse Lane.jpg"));
 			loopyLaneHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Loopy Lane.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Loopy Lane.png"));
 			lullabyLaneHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Lullaby Lane.jpg"));
 			mapleStreetHoverImage = ImageIO.read(this.getClass()
@@ -68,7 +68,7 @@ public class WorldMapPanel extends MapPanel {
 
 		Shape loopyLaneShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 482, 482, 454, 450, 438, 446 },
-				new int[] { 295, 307, 305, 316, 315, 295 });
+				new int[] { 295, 307, 307, 316, 315, 295 });
 		Shape punchlinePlaceShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 568, 582, 582, 543, 527, 538, 547, 568 },
 				new int[] { 397, 397, 422, 438, 418, 414, 424, 418 });
