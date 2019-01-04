@@ -1,6 +1,5 @@
 package com.tylerroyer.ttr_helper.maps;
 
-import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,38 +15,36 @@ public class WorldMapPanel extends MapPanel {
 	}
 
 	protected void initPanelLinks() {
-		BufferedImage missingAsset = null, altoAvenueHoverImage = null,
-				baritoneBoulevardHoverImage = null, barnacleBoulevardHoverImage = null,
-				elmStreetHoverImage = null, lighthouseLaneHoverImage = null,
-				loopyLaneHoverImage = null, lullabyLaneHoverImage = null,
-				mapleStreetHoverImage = null, oakStreetHoverImage = null,
-				pajamaPlaceHoverImage = null, polarPlaceHoverImage = null,
-				punchlinePlaceHoverImage = null, seaweedStreetHoverImage = null,
-				sillyStreetHoverImage = null, sleetStreetHoverImage = null,
-				tenorTerraceHoverImage = null, walrusWayHoverImage = null;
+		BufferedImage altoAvenueHoverImage = null, baritoneBoulevardHoverImage = null,
+				barnacleBoulevardHoverImage = null, elmStreetHoverImage = null,
+				lighthouseLaneHoverImage = null, loopyLaneHoverImage = null,
+				lullabyLaneHoverImage = null, mapleStreetHoverImage = null,
+				oakStreetHoverImage = null, pajamaPlaceHoverImage = null,
+				polarPlaceHoverImage = null, punchlinePlaceHoverImage = null,
+				seaweedStreetHoverImage = null, sillyStreetHoverImage = null,
+				sleetStreetHoverImage = null, tenorTerraceHoverImage = null,
+				walrusWayHoverImage = null;
 		try {
-			missingAsset = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 			altoAvenueHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Alto Avenue.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Alto Avenue.png"));
 			baritoneBoulevardHoverImage = ImageIO.read(this.getClass().getResourceAsStream(
-					"/resources/graphical/Hover Image - Baritone Boulevard.jpg"));
+					"/resources/graphical/Hover Image - Baritone Boulevard.png"));
 			barnacleBoulevardHoverImage = ImageIO.read(this.getClass().getResourceAsStream(
 					"/resources/graphical/Hover Image - Barnacle Boulevard.png"));
 			elmStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.png"));
 			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Lighthouse Lane.png"));
 			loopyLaneHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Loopy Lane.png"));
 			lullabyLaneHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Lullaby Lane.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Lullaby Lane.png"));
 			mapleStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Maple Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Maple Street.png"));
 			oakStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Oak Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Oak Street.png"));
 			pajamaPlaceHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Pajama Place.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Pajama Place.png"));
 			polarPlaceHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Polar Place.png"));
 			punchlinePlaceHoverImage = ImageIO.read(this.getClass()
@@ -59,7 +56,7 @@ public class WorldMapPanel extends MapPanel {
 			sleetStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Sleet Street.png"));
 			tenorTerraceHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Tenor Terrace.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Tenor Terrace.png"));
 			walrusWayHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Walrus Way.png"));
 		} catch (IOException e) {
@@ -90,7 +87,7 @@ public class WorldMapPanel extends MapPanel {
 		Shape elmStreetShape = HelperFunctions.createPolygonFromPoints(
 				new int[] { 148, 116, 189, 193, 140, 164 },
 				new int[] { 479, 509, 520, 511, 503, 480 });
-		// Maple st is weird in that it seems to go right through Chip and Dale's area.
+		// Maple St. is weird in that it seems to go right through Chip and Dale's area.
 		// To account for this, I'm splitting it into two parts so there's not a link
 		// going through Chip and Dale's area.
 		Shape mapleStreetShape1 = HelperFunctions.createPolygonFromPoints(
