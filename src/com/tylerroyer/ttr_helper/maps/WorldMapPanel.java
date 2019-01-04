@@ -33,7 +33,7 @@ public class WorldMapPanel extends MapPanel {
 			baritoneBoulevardHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Baritone Boulevard.jpg"));
 			barnacleBoulevardHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Barnacle Boulevard.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Barnacle Boulevard.png"));
 			elmStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.jpg"));
 			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
@@ -51,11 +51,11 @@ public class WorldMapPanel extends MapPanel {
 			polarPlaceHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Polar Place.jpg"));
 			punchlinePlaceHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Punchline Place.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Punchline Place.png"));
 			seaweedStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Seaweed Street.jpg"));
 			sillyStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Silly Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Silly Street.png"));
 			sleetStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Sleet Street.jpg"));
 			tenorTerraceHoverImage = ImageIO.read(this.getClass()
