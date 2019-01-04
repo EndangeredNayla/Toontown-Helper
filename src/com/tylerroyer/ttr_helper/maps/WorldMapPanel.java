@@ -37,7 +37,7 @@ public class WorldMapPanel extends MapPanel {
 			elmStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.jpg"));
 			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Lighthouse Lane.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Lighthouse Lane.png"));
 			loopyLaneHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Loopy Lane.png"));
 			lullabyLaneHoverImage = ImageIO.read(this.getClass()
@@ -49,19 +49,19 @@ public class WorldMapPanel extends MapPanel {
 			pajamaPlaceHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Pajama Place.jpg"));
 			polarPlaceHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Polar Place.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Polar Place.png"));
 			punchlinePlaceHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Punchline Place.png"));
 			seaweedStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Seaweed Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Seaweed Street.png"));
 			sillyStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Silly Street.png"));
 			sleetStreetHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Sleet Street.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Sleet Street.png"));
 			tenorTerraceHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Tenor Terrace.jpg"));
 			walrusWayHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Walrus Way.jpg"));
+					.getResourceAsStream("/resources/graphical/Hover Image - Walrus Way.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
