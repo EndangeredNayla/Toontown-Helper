@@ -53,7 +53,7 @@ public class MapsPanel extends JTabbedPane {
 
 		// Pane properties
 		this.setTabPlacement(JTabbedPane.LEFT);
-		this.setFont(GlobalFonts.mickeyFont.deriveFont(18f));
+		this.setFont(GlobalFonts.minnieFont.deriveFont(18f));
 		
 		// Add tabs to pane
 		for(Entry<String, MapPanel> entry : mapPanels.entrySet()) {
