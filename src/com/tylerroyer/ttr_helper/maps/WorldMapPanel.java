@@ -30,10 +30,10 @@ public class WorldMapPanel extends MapPanel {
 					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 			altoAvenueHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Alto Avenue.jpg"));
-			baritoneBoulevardHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Baritone Boulevard.jpg"));
-			barnacleBoulevardHoverImage = ImageIO.read(this.getClass()
-					.getResourceAsStream("/resources/graphical/Hover Image - Barnacle Boulevard.png"));
+			baritoneBoulevardHoverImage = ImageIO.read(this.getClass().getResourceAsStream(
+					"/resources/graphical/Hover Image - Baritone Boulevard.jpg"));
+			barnacleBoulevardHoverImage = ImageIO.read(this.getClass().getResourceAsStream(
+					"/resources/graphical/Hover Image - Barnacle Boulevard.png"));
 			elmStreetHoverImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Hover Image - Elm Street.jpg"));
 			lighthouseLaneHoverImage = ImageIO.read(this.getClass()
@@ -132,11 +132,11 @@ public class WorldMapPanel extends MapPanel {
 				new PanelLink(sillyStreetShape, sillyStreetHoverImage, 3),
 				new PanelLink(barnacleBoulevardShape, barnacleBoulevardHoverImage, 4),
 				new PanelLink(lighthouseLaneShape, lighthouseLaneHoverImage, 5),
-				new PanelLink(
-						new Shape[] { seaweedStreetShape1, seaweedStreetShape2 }, seaweedStreetHoverImage, 6),
+				new PanelLink(new Shape[] { seaweedStreetShape1, seaweedStreetShape2 },
+						seaweedStreetHoverImage, 6),
 				new PanelLink(elmStreetShape, elmStreetHoverImage, 7),
-				new PanelLink(new Shape[] { mapleStreetShape1, mapleStreetShape2 }, mapleStreetHoverImage,
-						8),
+				new PanelLink(new Shape[] { mapleStreetShape1, mapleStreetShape2 },
+						mapleStreetHoverImage, 8),
 				new PanelLink(oakStreetShape, oakStreetHoverImage, 9),
 				new PanelLink(altoAvenueShape, altoAvenueHoverImage, 10),
 				new PanelLink(baritoneBoulevardShape, baritoneBoulevardHoverImage, 11),
