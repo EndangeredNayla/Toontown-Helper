@@ -1,0 +1,7 @@
+0.1.0 - Initial build.  Shows images of active-invasion cogs.
+0.1.1 - Adds more detail about the cogs; Added an "Invasions" tab.
+0.1.2 - Visual enhancements; Invasions tab now refreshes.
+0.2.0 - Added a "Cogs" tab which shows all of the cogs in the game and their info.
+0.2.1 - Network-related stability enhancements.
+0.2.2 - Added sorting options to the "Cogs" tab.
+0.3.0 - Added "Maps" tab with maps of each street as well as the world map.
