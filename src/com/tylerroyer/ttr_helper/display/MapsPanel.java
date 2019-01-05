@@ -33,21 +33,21 @@ public class MapsPanel extends JTabbedPane {
 	public MapsPanel() {
 		// Put all maps into hash map
 		mapPanels.put("World Map", new WorldMapPanel(this));
-		mapPanels.put("LoopyLane", new LoopyLaneMapPanel(this));
-		mapPanels.put("Punchline Place", new PunchlinePlaceMapPanel(this));
-		mapPanels.put("Silly Street", new SillyStreetMapPanel(this));
 		mapPanels.put("Barnacle Boulevard", new BarnacleBoulevardMapPanel(this));
-		mapPanels.put("Lighthouse Lane", new LighthouseLaneMapPanel(this));
 		mapPanels.put("Seaweed Street", new SeaweedStreetMapPanel(this));
-		mapPanels.put("Elm Street", new ElmStreetMapPanel(this));
-		mapPanels.put("Maple Street", new MapleStreetMapPanel(this));
-		mapPanels.put("Oak Street", new OakStreetMapPanel(this));
+		mapPanels.put("Lighthouse Lane", new LighthouseLaneMapPanel(this));
+		mapPanels.put("Silly Street", new SillyStreetMapPanel(this));
+		mapPanels.put("Loopy Lane", new LoopyLaneMapPanel(this));
+		mapPanels.put("Punchline Place", new PunchlinePlaceMapPanel(this));
+		mapPanels.put("Walrus Way", new WalrusWayMapPanel(this));
+		mapPanels.put("Sleet Street", new SleetStreetMapPanel(this));
+		mapPanels.put("Polar Place", new PolarPlaceMapPanel(this));
 		mapPanels.put("Alto Avenue", new AltoAvenueMapPanel(this));
 		mapPanels.put("Baritone Boulevard", new BaritoneBoulevardMapPanel(this));
 		mapPanels.put("Tenor Terrace", new TenorTerraceMapPanel(this));
-		mapPanels.put("Polar Place", new PolarPlaceMapPanel(this));
-		mapPanels.put("Sleet Street", new SleetStreetMapPanel(this));
-		mapPanels.put("Walrus Way", new WalrusWayMapPanel(this));
+		mapPanels.put("Elm Street", new ElmStreetMapPanel(this));
+		mapPanels.put("Maple Street", new MapleStreetMapPanel(this));
+		mapPanels.put("Oak Street", new OakStreetMapPanel(this));
 		mapPanels.put("Lullaby Lane", new LullabyLaneMapPanel(this));
 		mapPanels.put("Pajama Place", new PajamaPlaceMapPanel(this));
 
