@@ -18,6 +18,7 @@ public class Window extends JFrame {
 	private MapsPanel mapsPanel;
 	private CogsPanel cogsPanel;
 	private InvasionsPanel invasionsPanel;
+	private TablesPanel tablesPanel;
 
 	public Window() {
 		this.setTitle(GlobalStrings.ProgramName + " " + GlobalStrings.ProgramVersion);
@@ -26,12 +27,14 @@ public class Window extends JFrame {
 		mapsPanel = new MapsPanel();
 		cogsPanel = new CogsPanel();
 		invasionsPanel = new InvasionsPanel();
+		tablesPanel = new TablesPanel();
 
 		tabbedPane = new JTabbedPane();
 		tabbedPane.setFont(GlobalFonts.mickeyFont.deriveFont(18f));
 		tabbedPane.addTab("Maps", mapsPanel);
 		tabbedPane.addTab("Cogs", cogsPanel);
 		tabbedPane.addTab("Invasions", invasionsPanel);
+		tabbedPane.addTab("Tables", tablesPanel);
 		this.add(tabbedPane);
 
 		this.setSize(INITIAL_WIDTH, INITIAL_HEIGHT);
@@ -49,5 +52,6 @@ public class Window extends JFrame {
 		invasionsPanel.doUpdate(tabbedPane.getSelectedComponent() == invasionsPanel);
 		cogsPanel.doUpdate(tabbedPane.getSelectedComponent() == cogsPanel);
 		mapsPanel.doUpdate(tabbedPane.getSelectedComponent() == mapsPanel);
+		tablesPanel.doUpdate(tabbedPane.getSelectedComponent() == tablesPanel);
 	}
 }

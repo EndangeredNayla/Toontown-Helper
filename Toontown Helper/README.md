@@ -12,7 +12,7 @@ Rewritten so they understand who is accessing their API."
    
 ## Support the Creator   
 If you want to support Tyler Royer, the creator of this application, you can:   
-* [follow him on Twitch](https://twitch.tv/hades948) to see weekly Toontown 
+* [Follow him on Twitch](https://twitch.tv/hades948) to see weekly Toontown 
 Rewritten and Skyrim livestreams.   
 * [Donate directly through Streamlabs](https://streamlabs.com/hades948).  This 
 will link to the Twitch stream above so he will see your donation right away 
