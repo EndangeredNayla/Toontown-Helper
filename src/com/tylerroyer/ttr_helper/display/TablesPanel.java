@@ -37,10 +37,10 @@ public class TablesPanel extends JPanel {
 		try {
 			cogHPImage = ImageIO.read(
 					this.getClass().getResourceAsStream("/resources/graphical/Table - Cog HP.png"));
-			bossbotPercentagesImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			bossbotPercentagesImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Table - Bossbots.png"));
 			lawbotPercentagesImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+					this.getClass().getResourceAsStream("/resources/graphical/Table - Lawbots.png"));
 			cashbotPercentagesImage = ImageIO.read(
 					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 			sellbotPercentagesImage = ImageIO.read(
@@ -69,7 +69,8 @@ public class TablesPanel extends JPanel {
 				int compCount = tableContainer.getComponentCount();
 				Component lastComponent = tableContainer.getComponent(compCount - 1);
 				if (lastComponent != null)
-					tableContainer.setPreferredSize(new Dimension(225, lastComponent.getY() + 207));
+					tableContainer.setPreferredSize(
+							new Dimension(225, lastComponent.getY() + lastComponent.getHeight() + 15));
 			} catch (ArrayIndexOutOfBoundsException e) {
 				// Ignore. This is likely caused by sync issues and the program should function
 				// w/o it. Also, bounds checking doesn't work because of sync issues.
