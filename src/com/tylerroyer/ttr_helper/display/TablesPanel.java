@@ -36,7 +36,7 @@ public class TablesPanel extends JPanel {
 
 		try {
 			cogHPImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+					this.getClass().getResourceAsStream("/resources/graphical/Table - Cog HP.png"));
 			bossbotPercentagesImage = ImageIO.read(
 					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 			lawbotPercentagesImage = ImageIO.read(
@@ -50,10 +50,10 @@ public class TablesPanel extends JPanel {
 		}
 
 		cogHPLabel = new JLabel(new ImageIcon(cogHPImage));
-		bossbotPercentagesLabel = new JLabel(new ImageIcon(cogHPImage));
-		lawbotPercentagesLabel = new JLabel(new ImageIcon(cogHPImage));
-		cashbotPercentagesLabel = new JLabel(new ImageIcon(cogHPImage));
-		sellbotPercentagesLabel = new JLabel(new ImageIcon(cogHPImage));
+		bossbotPercentagesLabel = new JLabel(new ImageIcon(bossbotPercentagesImage));
+		lawbotPercentagesLabel = new JLabel(new ImageIcon(lawbotPercentagesImage));
+		cashbotPercentagesLabel = new JLabel(new ImageIcon(cashbotPercentagesImage));
+		sellbotPercentagesLabel = new JLabel(new ImageIcon(sellbotPercentagesImage));
 
 		tableContainer.add(cogHPLabel);
 		tableContainer.add(bossbotPercentagesLabel);
