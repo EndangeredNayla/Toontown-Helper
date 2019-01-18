@@ -5,10 +5,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 import javax.imageio.ImageIO;
 

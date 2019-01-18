@@ -29,11 +29,11 @@ public class PanelLink {
 		return linkedPanelIndex;
 	}
 
-	public boolean contains(int x, int y) {
+	public boolean inBounds(int x, int y) {
 		for (Shape shape : shapes)
-			if (shape.contains(x, y))
+			if (shape.getBounds().contains(x, y))
 				return true;
-		
+
 		return false;
 	}
 

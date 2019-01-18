@@ -90,7 +90,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 			// Ignore. Caused by initializing panel while not selected.
 		}
 		for (PanelLink pl : panelLinks) {
-			if (pl.contains(mouseX, mouseY)) {
+			if (pl.inBounds(mouseX, mouseY)) {
 				isHovering = true;
 
 				// Draw link
@@ -107,6 +107,8 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 				int offsetX = mouseX + imageWidth > map.getWidth() ? -imageWidth - 15 : +15;
 				int offsetY = mouseY + imageHeight > map.getHeight() ? -imageHeight - 15 : +15;
 				g.drawImage(pl.getHoverImage(), mouseX + offsetX, mouseY + offsetY, this);
+				
+				break; // Only detect one link at a time.
 			}
 		}
 
@@ -150,7 +152,7 @@ public abstract class MapPanel extends Canvas implements MouseListener {
 	public void mousePressed(MouseEvent arg0) {
 		// Test for panel links being clicked.
 		for (PanelLink pl : panelLinks) {
-			if (pl.contains(mouseX, mouseY)) {
+			if (pl.inBounds(mouseX, mouseY)) {
 				holder.setSelectedIndex(pl.getLinkedPanelIndex());
 				return;
 			}
