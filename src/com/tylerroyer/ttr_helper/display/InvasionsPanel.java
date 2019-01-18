@@ -3,12 +3,8 @@ package com.tylerroyer.ttr_helper.display;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
-import java.awt.IllegalComponentStateException;
-import java.awt.MouseInfo;
-import java.awt.Point;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
@@ -105,23 +101,16 @@ public class InvasionsPanel extends JPanel {
 		}
 
 		for (Invasion i : apiHandler.getInvasionInfo().getInvasionList()) {
-			System.out.println("There is a " + i.getCog().getName() + " invasion in " + i.getDistrict()
-					+ ".  Current progress: " + i.getCurrentProgress() + "/" + i.getMaxProgress());
-
 			invasionPanelListContainer.add(new InvasionPanel(i));
 		}
-		System.out.println();
 
 		invasionPanelListContainer
 				.setPreferredSize(new Dimension(225, apiHandler.getInvasionInfo().getInvasionList().size() * 207));
 	}
 
 	private class InvasionPanel extends JPanel {
-		private Invasion invasion;
 
 		public InvasionPanel(Invasion i) {
-			this.invasion = i;
-
 			BufferedImage panelImage = new BufferedImage(893, 192, BufferedImage.TYPE_INT_ARGB);
 			Graphics2D g = panelImage.createGraphics();
 			g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_GASP);
@@ -162,10 +151,6 @@ public class InvasionsPanel extends JPanel {
 			}
 
 			add(new JLabel(new ImageIcon(panelImage)));
-		}
-
-		public Invasion getInvasion() {
-			return invasion;
 		}
 	}
 }

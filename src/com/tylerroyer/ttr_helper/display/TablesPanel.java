@@ -39,10 +39,10 @@ public class TablesPanel extends JPanel {
 					this.getClass().getResourceAsStream("/resources/graphical/Table - Cog HP.png"));
 			bossbotPercentagesImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Table - Bossbots.png"));
-			lawbotPercentagesImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/Table - Lawbots.png"));
-			cashbotPercentagesImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+			lawbotPercentagesImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Table - Lawbots.png"));
+			cashbotPercentagesImage = ImageIO.read(this.getClass()
+					.getResourceAsStream("/resources/graphical/Table - Cashbots.png"));
 			sellbotPercentagesImage = ImageIO.read(
 					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
 		} catch (IOException e) {
@@ -60,6 +60,10 @@ public class TablesPanel extends JPanel {
 		tableContainer.add(lawbotPercentagesLabel);
 		tableContainer.add(cashbotPercentagesLabel);
 		tableContainer.add(sellbotPercentagesLabel);
+
+		// TODO Length would ideally not be hard-coded but unless I start adding a whole
+		// bunch of tables, it's not a big deal.
+		tableContainer.setPreferredSize(new Dimension(1, 1053));
 	}
 
 	public void doUpdate(boolean isSelected) {
@@ -68,9 +72,10 @@ public class TablesPanel extends JPanel {
 			try {
 				int compCount = tableContainer.getComponentCount();
 				Component lastComponent = tableContainer.getComponent(compCount - 1);
-				if (lastComponent != null)
-					tableContainer.setPreferredSize(
-							new Dimension(225, lastComponent.getY() + lastComponent.getHeight() + 15));
+				if (lastComponent != null) {
+					tableContainer.setPreferredSize(new Dimension(225,
+							lastComponent.getY() + lastComponent.getHeight() + 15));
+				}
 			} catch (ArrayIndexOutOfBoundsException e) {
 				// Ignore. This is likely caused by sync issues and the program should function
 				// w/o it. Also, bounds checking doesn't work because of sync issues.
