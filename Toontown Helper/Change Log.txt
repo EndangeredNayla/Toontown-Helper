@@ -8,3 +8,5 @@
 0.3.1 - Consistent maps; More informative hover images on world map.
 0.4.0 - Added "Tables" tab with a Cog HP table and a table for Bossbot/Lawbot spawn 
 		frequencies (Cashbot/Sellbot tables are to come in a future version).
+0.4.1 - Added Cashbot table; Fixed world map bug where links would point to the
+		wrong map.
