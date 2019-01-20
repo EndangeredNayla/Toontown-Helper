@@ -1,5 +1,3 @@
-This application is currently in development and may be unstable.   
-   
 ## User Agreement   
 By using this application, you agree to the following statement:   
 "I understand that by using this application, basic information about 
