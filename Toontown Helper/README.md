@@ -8,7 +8,9 @@ system information is being stored within the program and sent to
 Toontown Rewritten.  This application will not share any of this information 
 with any party other than Toontown Rewritten and the creators of the 
 application.  This information is being used as a courtesy to Toontown 
-Rewritten so they understand who is accessing their API."   
+Rewritten so they understand who is accessing their API.  I also understand that
+the creator of this application cannot be held accountable for any harm or damage
+which may result from the use of this application."   
    
 ## Support the Creator   
 If you want to support Tyler Royer, the creator of this application, you can:   
