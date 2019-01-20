@@ -1,5 +1,6 @@
 package com.tylerroyer.ttr_helper.display;
 
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -35,6 +36,10 @@ public class Window extends JFrame {
 		tabbedPane.addTab("Cogs", cogsPanel);
 		tabbedPane.addTab("Invasions", invasionsPanel);
 		tabbedPane.addTab("Tables", tablesPanel);
+		tabbedPane.setMnemonicAt(0, KeyEvent.VK_M);
+		tabbedPane.setMnemonicAt(1, KeyEvent.VK_C);
+		tabbedPane.setMnemonicAt(2, KeyEvent.VK_I);
+		tabbedPane.setMnemonicAt(3, KeyEvent.VK_T);
 		this.add(tabbedPane);
 
 		this.setSize(INITIAL_WIDTH, INITIAL_HEIGHT);

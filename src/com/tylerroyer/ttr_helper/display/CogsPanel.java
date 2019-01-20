@@ -1,6 +1,7 @@
 package com.tylerroyer.ttr_helper.display;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -150,7 +151,8 @@ public class CogsPanel extends JPanel implements ActionListener {
 
 	private class CogPanel extends JPanel {
 		public CogPanel(Cog c) {
-			add(new JLabel(new ImageIcon(c.getInfoImage())));
+			JLabel label = new JLabel(new ImageIcon(c.getInfoImage()));
+			add(label);
 		}
 	}
 

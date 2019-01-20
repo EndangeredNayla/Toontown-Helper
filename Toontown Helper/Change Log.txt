@@ -11,3 +11,4 @@
 0.4.1 - Added Cashbot table; Fixed world map bug where links would point to the
 		wrong map.
 0.4.2 - Added Sellbot table.
+1.0.0 - Added mnemonics; First official release.
