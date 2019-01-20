@@ -2,5 +2,5 @@ package com.tylerroyer.ttr_helper.globals;
 
 public class GlobalStrings {
 	public static String ProgramName = "Toontown Helper";
-	public static String ProgramVersion = "0.4.2";
+	public static String ProgramVersion = "0.5.0";
 }
