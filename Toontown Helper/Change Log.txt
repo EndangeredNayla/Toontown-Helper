@@ -10,3 +10,4 @@
 		frequencies (Cashbot/Sellbot tables are to come in a future version).
 0.4.1 - Added Cashbot table; Fixed world map bug where links would point to the
 		wrong map.
+0.4.2 - Added Sellbot table.

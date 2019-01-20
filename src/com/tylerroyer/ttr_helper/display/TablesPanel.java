@@ -44,7 +44,7 @@ public class TablesPanel extends JPanel {
 			cashbotPercentagesImage = ImageIO.read(this.getClass()
 					.getResourceAsStream("/resources/graphical/Table - Cashbots.png"));
 			sellbotPercentagesImage = ImageIO.read(
-					this.getClass().getResourceAsStream("/resources/graphical/MissingAsset.png"));
+					this.getClass().getResourceAsStream("/resources/graphical/Table - Sellbots.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
