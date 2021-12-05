@@ -4,14 +4,15 @@ import com.tylerroyer.ttr_helper.cogs.Cog;
 
 public class Invasion {
 	private Cog cog;
-	private String district;
+	private String district, progress;
 	private int currentProgress, maxProgress;
 	
-	public Invasion(Cog cog, String district, int currentProgress, int maxProgress) {
+	public Invasion(Cog cog, String district, int currentProgress, int maxProgress, String progress) {
 		this.cog = cog;
 		this.district = district;
 		this.currentProgress = currentProgress;
 		this.maxProgress = maxProgress;
+		this.progress = progress;
 	}
 
 	public Cog getCog() {
@@ -24,6 +25,10 @@ public class Invasion {
 
 	public int getCurrentProgress() {
 		return currentProgress;
+	}
+
+	public String getProgress() {
+		return progress;
 	}
 
 	public int getMaxProgress() {

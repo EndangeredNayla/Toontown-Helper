@@ -144,7 +144,7 @@ public class InvasionsPanel extends JPanel {
 				g.fillRect(353, 133, 246 * i.getCurrentProgress() / i.getMaxProgress(), 27);
 				g.setColor(Color.BLACK);
 				g.drawRect(350, 130, 250, 32);
-				g.drawString("(" + i.getCurrentProgress() + " / " + i.getMaxProgress() + ")", 630, 155);
+				g.drawString(i.getProgress(), 630, 155);
 
 			} catch (Exception e) {
 				e.printStackTrace();

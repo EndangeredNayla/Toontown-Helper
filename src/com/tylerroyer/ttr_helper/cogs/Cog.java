@@ -47,6 +47,7 @@ public class Cog {
 	private static Cog theMingler = new Cog("The Mingler", CogType.SELLBOT, 7, 11);
 	private static Cog mrHollywood = new Cog("Mr. Hollywood", CogType.SELLBOT, 8, 12);
 
+	//private static Cog v2twoFace = new Cog("Version 2.0 Two-Face", CogType.SELLBOT, 7, 11);
 	private static Cog unimplementedCog = new Cog("UnimplementedCogName", CogType.NONE, 0, 0);
 
 	public static Cog[] cogs = { flunky, pencilPusher, yesman, micromanager, downsizer, headHunter, corporateRaider,

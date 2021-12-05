@@ -30,14 +30,18 @@ public class InvasionsInfo {
 			JSONObject invasionInfo = invasions.getJSONObject(name);
 
 			String cogName = fixName(invasionInfo.getString("type"));
-
 			Cog cog = Cog.findCogByName(cogName);
 
 			String progress = (String) invasionInfo.get("progress");
+			String invType = (String) invasionInfo.get("progress");
+
 			int currentProgress = Integer.parseInt(progress.substring(0, progress.indexOf("/")));
 			int maxProgress = Integer.parseInt(progress.substring(progress.indexOf("/") + 1));
 
-			invasionList.add(new Invasion(cog, name, currentProgress, maxProgress));
+			if (progress.equals("0/1000000"));
+				progress.replace("0/1000000", "MEGA Invasion!");
+
+			invasionList.add(new Invasion(cog, name, currentProgress, maxProgress, progress));
 		}
 	}
 
@@ -50,7 +54,7 @@ public class InvasionsInfo {
 				name = name.substring(0, i) + name.substring(i + 1);
 			}
 		}
-
+		name = name.replace("Version 2.0 ", "");
 		return name;
 	}
 
